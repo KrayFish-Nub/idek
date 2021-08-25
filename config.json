@@ -1,0 +1,22 @@
+{
+    "token": "ODczNzk5OTk5NzY5NjgxOTcx.YQ9rqg.Hle4UcLtJ3gAcHeqvkWnmInEgVA",
+    "prefix": "!",
+    "mongooseConnectionString": "mongodb+srv://admin:admin@dbxtesting.8je2i.mongodb.net/Data",
+    "color": "#5539cc",
+    "owner": "749290595645653114",
+    "lock": "<:blurplelock:868554303848210512>",
+    "settings": "<:settings:863637932787105852>",
+    "compas": "<:compas:863637932224282674>",
+    "wumpusjet": "<a:wumpusjetpack:877235024263524382>",
+    "roles": "<:roles:872930399335108628>",
+    "handshake": "<a:nitrorighthand:879111663176020008>",
+    "rightarrow": "<:blurplejoin:873405029107777547>",
+    "dscloading": "<a:discord_loading:877973912011554856>",
+    "txt": "<:txtchannel:869281802395738163>",
+    "vc": "<:voicechannel:869281232201080933>",
+    "members": "<:members:863637932270551040>",
+    "online": "<:online:869190337216774144>",
+    "idle": "<:idle:869190610635087873>",
+    "dnd": "<:dnd:869190610962247711>",
+    "offline": "<:ooffline:869190610710581289>"
+}
