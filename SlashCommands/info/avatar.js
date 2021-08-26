@@ -20,7 +20,7 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         const member = interaction.guild.members.cache.get(args[0]) || interaction.member;
-        const avatar = member.user.avatarURL({ dynamic: true })
+        const avatar = member.user.avatarURL({ dynamic: true, format: "png", })
 
         const avatarEmbed = new MessageEmbed()
             .setDescription(`<@${member.user.id}>**_'s Avatar :_**`)

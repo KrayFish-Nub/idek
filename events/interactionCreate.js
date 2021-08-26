@@ -22,9 +22,9 @@ client.on("interactionCreate", async (interaction) => {
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
         const permission = interaction.member.permissions.has(cmd.permission);
 
-        if (!permission) return interaction.followUp({ content: client.config.lock + "Hi you don't have **V A L I D** perms" });
+        if (!permission) return interaction.followUp({ content: client.config.lock + "Hi you don't have **VALID** perms" });
         const config = require("../config.json");
-        if (cmd.ownerOnly && interaction.member.id !== config.owner) return interaction.followUp({ content: client.config.lock + "This is owner **O N L Y** command" });
+        if (cmd.ownerOnly && interaction.member.id !== config.owner) return interaction.followUp({ content: client.config.lock + "This is owners **ONLY** command" });
         interaction.member = interaction.guild.members.cache.get(interaction.user.id)
 
         cmd.run(client, interaction, args);
