@@ -10,7 +10,7 @@ const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, Messa
 module.exports = {
     name: 'derti',
     description: 'Derti 98.6  radio station',
-    permission: ['SEBD_MESSAGES'],
+    permission: ['SEND_MESSAGES'],
     ownerOnly: false,
     /** 
      * @param {Client} client 

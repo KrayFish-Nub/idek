@@ -10,7 +10,7 @@ const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, Messa
 module.exports = {
     name: 'athensdeejay',
     description: 'AthensDeeJay 95.2 radio station',
-    permission: ['SEBD_MESSAGES'],
+    permission: ['SEND_MESSAGES'],
     ownerOnly: false,
     /** 
      * @param {Client} client 
