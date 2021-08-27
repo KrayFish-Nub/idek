@@ -30,7 +30,7 @@ module.exports = {
             reactions3 = "I left dawg no need to bully me...",
             reactions4 = "Your mean man...",
             reactions5 = "Finally someone got me out of my misery...",
-            reactions6 = "I stop cursing at me!",
+            reactions6 = "Ok i stop, stop cursing at me!",
             reactions7 = "Your a bitch"
 
         const dcreactions = [reactions1, reactions2, reactions3, reactions4, reactions4, reactions5, reactions6, reactions7]
