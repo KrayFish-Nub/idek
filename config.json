@@ -1,7 +1,5 @@
 {
-    "token": "ODczNzk5OTk5NzY5NjgxOTcx.YQ9rqg.Hle4UcLtJ3gAcHeqvkWnmInEgVA",
-    "prefix": "!",
-    "mongooseConnectionString": "mongodb+srv://admin:admin@dbxtesting.8je2i.mongodb.net/Data",
+    "botpfp": "https://media.discordapp.net/attachments/872924441275953162/880960998981386261/standard_3.gif",
     "color": "#5539cc",
     "owner": "749290595645653114",
     "lock": "<:blurplelock:868554303848210512>",

@@ -27,12 +27,8 @@ module.exports = {
             dnd: "https://emoji.gg/assets/emoji/2531_dnd.png",
             offline: "https://emoji.gg/assets/emoji/7445_status_offline.png"
         }
-        let badges = await user.user.flags
-        badges = await badges ? badges.toArray() : ["None"]
-        let newbadges = [];
-        badges.forEach(m => {
-            newbadges.push(m.replace("_", "_"))
-        })
+
+        const roles = user.roles.cache.filter(s => s.id !== user.guild.id).map(role => role).join(", ")
         const whois = new MessageEmbed()
             .setColor(client.config.color)
             .setAuthor(`${user.user.tag}`, user.user.avatarURL())
@@ -40,8 +36,6 @@ module.exports = {
             .addField(client.config.compas + " Joined At", moment(user.joinedAt).format("`LLLL`"))
             .addField(client.config.compas + " Account Created At", moment(user.user.createdAt).format("`LLLL`"))
             .addField(client.config.settings + " Common Information", `ID: \`${user.user.id}\`\nDiscriminator: \`${user.user.discriminator}\`\nBot: \`${user.user.bot}\`\nDeleted User: \`${user.deleted}\``)
-            // .addField(client.config.wumpusjet + " Badges", newbadges.join(", ").toLowerCase() || "None")
-            .addField(client.config.roles + " Roles:", ` ${user.roles.cache.filter(s => s.id !== user.guild.id).map(role => role).join(", ")}`)
             .setFooter(user.presence.status, stat[user.presence.status])
 
         let array = []

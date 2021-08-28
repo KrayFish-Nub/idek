@@ -1,5 +1,9 @@
 const { Client, Collection, Interaction, MessageEmbed, MessageButton, MessageActionRow, ClientVoiceManager } = require("discord.js");
-
+const { Player } = require('discord-player');
+const { registerPlayerEvents } = require('./events/music_events');
+const { mongoUrl } = require("./security.json");
+const mongoose = require("mongoose");
+const chalk = require("chalk")
 const client = new Client({
     intents: 32767,
     allowedMentions: {
@@ -7,15 +11,24 @@ const client = new Client({
         repliedUser: false,
     }
 });
-module.exports = client;
 
+mongoose.connect(mongoUrl, {
+    useFindAndModify: true,
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+}).then(console.log(chalk.greenBright('Connected to MongoDB')))
+
+module.exports = client;
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./config.json");
-
+client.security = require("./security.json");
+client.player = new Player(client);
+registerPlayerEvents(client.player);
 require("./handler")(client);
 
-client.on('interactionCreate', async (interaction) => {
+client.on('interactionCreate', async (interaction, args) => {
+    const userClick = interaction.member
     const user = interaction.user.username;
     const userId = interaction.user.id;
     const name = "ticket-" + user;
@@ -214,8 +227,27 @@ client.on('interactionCreate', async (interaction) => {
             content: client.config.dscloading + "Deleting ticket in: `5 seconds`"
         })
     }
+    // BUTTON ROLES \\
+
+});
+client.on("messageCreate", async message => {
+    if (message.author.bot) return;
+    const sugSchema = require('./models/suggestions')
+    sugSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
+        if (!data) return;
+        if (message.channel.id === data.Channel) {
+
+            const channel = message.guild.channels.cache.get(data.Channel);
+            message.delete()
+            const embed = new MessageEmbed()
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                .setDescription(message.content)
+                .setTimestamp()
+                .setColor("RANDOM")
+            channel.send({ embeds: [embed] })
+        }
+    })
 });
 
 
-
-client.login(client.config.token);
+client.login(client.security.token);

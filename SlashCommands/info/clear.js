@@ -22,7 +22,6 @@ module.exports = {
         let amount = args[0]
         if (amount <= 100) {
             interaction.channel.bulkDelete(amount, true)
-
         }
 
         interaction.channel.send({
