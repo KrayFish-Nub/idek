@@ -4,6 +4,7 @@ module.exports = {
     name: 'slowmodeoff',
     description: 'Turn off slowmode',
     permission: ['MANAGE_CHANNELS'],
+    botPermission: ["MANAGE_CHANNELS", "VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     /** 
      * @param {Client} client 

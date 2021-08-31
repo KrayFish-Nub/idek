@@ -4,6 +4,7 @@ module.exports = {
     name: 'play',
     description: 'Play a song',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["CONNECT", "VIEW_CHANNEL", "SPEAK", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: true,
     options: [
         {

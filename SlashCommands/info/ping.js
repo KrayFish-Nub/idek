@@ -4,6 +4,7 @@ module.exports = {
     name: "ping",
     description: "Returns bots letency",
     permission: ['SEND_MESSAGES'],
+    botPermission: ["SEND_MESSAGES", "VIEW_CHANNEL", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     /**
      *

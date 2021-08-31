@@ -3,7 +3,8 @@ const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, Messa
 module.exports = {
     name: 'drake',
     description: 'the drake meme',
-    permission: ['SEND_MESSAGES'],
+    permission: ['SEND_MESSAGES'], 
+    botPermission: ['SEND_MESSAGES', 'ATTACH_FILES'],
     ownerOnly: false,
     options: [
         {

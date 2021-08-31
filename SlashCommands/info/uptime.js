@@ -4,7 +4,8 @@ const pretty = require("pretty-ms");
 module.exports = {
     name: 'uptime',
     description: 'uptime for the bot',
-    permission: ["SEND_MESSAGES"],
+    permission: ['SEND_MESSAGES'],
+    botPermission: ["CONNECT", "VIEW_CHANNEL", "SPEAK", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
 
     /** 

@@ -4,6 +4,7 @@ module.exports = {
     name: "say",
     description: "What do u want to say ?",
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

@@ -4,6 +4,7 @@ module.exports = {
     name: 'avatar',
     description: 'Display the avatar of a user!',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTCH_FILES'],
     ownerOnly: false,
     options: [
         {

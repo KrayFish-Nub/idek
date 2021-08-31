@@ -4,6 +4,7 @@ module.exports = {
     name: 'unban',
     description: 'Unban a member duh',
     permission: ['BAN_MEMBERS'],
+    botPermission: ["BAN_MEMBERS", "VIEW_CHANNEL", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

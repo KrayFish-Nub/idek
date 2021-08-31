@@ -3,8 +3,9 @@ const { create } = require('sourcebin');
 
 module.exports = {
     name: 'sourcebin',
-    description: 'Encode or decode a code or text',
+    description: 'Upload code to sourcebin',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

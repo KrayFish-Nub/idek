@@ -4,6 +4,7 @@ module.exports = {
     name: 'whowouldwin',
     description: 'Who would win?',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["CONNECT", "VIEW_CHANNEL", "SPEAK", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

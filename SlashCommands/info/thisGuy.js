@@ -4,6 +4,7 @@ module.exports = {
     name: 'thisguy',
     description: 'this GUY',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["ATTACH_FILES", "SEND_MESSAGES", "VIEW_CHANNEL"],
     ownerOnly: false,
     options: [
         {

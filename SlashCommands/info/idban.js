@@ -4,6 +4,7 @@ module.exports = {
     name: 'idban',
     description: 'ban user thats not in the server',
     permission: ['BAN_MEMBERS'],
+    botPermission: ['BAN_MEMBERS', 'SEND_MESSAGES'],
     ownerOnly: false,
     options: [
         {

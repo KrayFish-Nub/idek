@@ -4,6 +4,7 @@ module.exports = {
     name: "gayrate",
     description: "Gay rate of a user",
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTACH_FILES'],
     ownerOnly: false,
     options: [
         {

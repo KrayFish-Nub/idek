@@ -8,7 +8,6 @@ const globPromise = promisify(glob);
  * @param {Client} client
  */
 module.exports = async (client) => {
-    // Commands
     const commandFiles = await globPromise(`${process.cwd()}/commands/**/*.js`);
     commandFiles.map((value) => {
         const file = require(value);
@@ -33,12 +32,15 @@ module.exports = async (client) => {
         arrayOfSlashCommands.push(file);
     });
     client.on("ready", async () => {
-        // Register for a single guild
-        // await client.guilds.cache
-        //     .get("860248248782684171")
-        //     .commands.set(arrayOfSlashCommands);
-
-        // Register for all the guilds the bot is in
-        await client.application.commands.set(arrayOfSlashCommands);
+        //1 server
+        await client.guilds.cache
+            .get("875640933310414868")
+            .commands.set(arrayOfSlashCommands);
+        //reset 1 server
+        // client.guilds.cache.get('875640933310414868').commands.set([]);
+        //reset slash commands all servers takes 1hour
+        // await client.application.commands.set([]);
+        //all servers takes 1hour
+        // await client.application.commands.set(arrayOfSlashCommands);
     });
 };

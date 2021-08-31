@@ -11,6 +11,7 @@ module.exports = {
     name: 'derti',
     description: 'Derti 98.6  radio station',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["CONNECT", "VIEW_CHANNEL", "SPEAK", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     /** 
      * @param {Client} client 

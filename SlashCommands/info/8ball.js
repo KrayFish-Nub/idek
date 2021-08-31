@@ -33,6 +33,7 @@ module.exports = {
     name: '8ball',
     description: 'You ask and i awnser',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["CONNECT", "VIEW_CHANNEL", "SPEAK", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

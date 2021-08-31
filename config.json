@@ -2,6 +2,7 @@
     "botpfp": "https://media.discordapp.net/attachments/872924441275953162/880960998981386261/standard_3.gif",
     "color": "#5539cc",
     "owner": "749290595645653114",
+    "owner2": "873881757064261672",
     "lock": "<:blurplelock:868554303848210512>",
     "settings": "<:settings:863637932787105852>",
     "compas": "<:compas:863637932224282674>",
@@ -18,5 +19,14 @@
     "dnd": "<:dnd:869190610962247711>",
     "offline": "<:ooffline:869190610710581289>",
     "heart": "<:blurpleheart:880142674601066677>",
-    "uparrow": "<:blurpleup:880144916980850748>"
+    "slash": "<:slash:881341580370382909>",
+    "uparrow": "<:blurpleup:880144916980850748>",
+    "botinvurl": "https://dsc.gg/blackphonebot",
+    "cpblack": "© Black Phone",
+    "roboticon": "https://cdn.discordapp.com/attachments/872924441275953162/872924473945370634/integration.png",
+    "blackphoneicon": "https://media.discordapp.net/attachments/872924441275953162/880960998981386261/standard_3.gif",
+    "musicicon": "https://media.discordapp.net/attachments/872924441275953162/881338925053018152/seamless-pattern-with-cartoon-musical-subwoofers-vector-30567652.jpg",
+    "techsupport": "https://cdn.discordapp.com/attachments/872924441275953162/881321283483205632/Untitled-1.png",
+    "shieldmod": "https://media.discordapp.net/attachments/872924441275953162/872924476138987530/mod.png",
+    "utilsicon": "https://media.discordapp.net/attachments/872924441275953162/872924478877863936/settings.png"
 }

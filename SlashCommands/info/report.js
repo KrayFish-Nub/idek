@@ -4,6 +4,7 @@ module.exports = {
     name: "bugreport",
     description: "Report a bug",
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

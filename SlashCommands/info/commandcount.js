@@ -4,6 +4,7 @@ module.exports = {
     name: 'commands',
     description: 'Get to know how many slash commands i have',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'VIEW_CHANNEL'],
     ownerOnly: false,
     /** 
      * @param {Client} client 

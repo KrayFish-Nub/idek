@@ -4,6 +4,7 @@ module.exports = {
     name: 'gunpoint',
     description: 'GUN POINT A BITCH',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTACH_FILES'],
     ownerOnly: false,
     /** 
      * @param {Client} client 

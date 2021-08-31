@@ -4,6 +4,7 @@ module.exports = {
     name: 'radiostations',
     description: 'full list of radio stations',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     /** 
      * @param {Client} client 

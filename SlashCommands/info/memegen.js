@@ -5,6 +5,7 @@ module.exports = {
     name: 'getmeme',
     description: 'This gets infinite memes',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     /** 
      * @param {Client} client 

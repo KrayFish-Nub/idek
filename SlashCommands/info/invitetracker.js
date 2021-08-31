@@ -4,6 +4,7 @@ module.exports = {
     name: 'invitetracker',
     description: 'Get the number of people that joined via your invites',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES", "VIEW_GUILD_INSIGHTS"],
     ownerOnly: false,
     options: [
         {

@@ -11,6 +11,7 @@ module.exports = {
     name: 'laziostyle',
     description: 'Lazio Style 89.3 radio station',
     permission: ['SEBD_MESSAGES'],
+    botPermission: ["CONNECT", "VIEW_CHANNEL", "SPEAK", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     /** 
      * @param {Client} client 

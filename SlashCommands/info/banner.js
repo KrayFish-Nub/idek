@@ -5,6 +5,7 @@ module.exports = {
     name: 'banner',
     description: 'Get the banner of a user',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTCH_FILES'],
     ownerOnly: false,
     options: [
         {

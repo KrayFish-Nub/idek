@@ -4,6 +4,7 @@ module.exports = {
     name: 'slowmode',
     description: 'Set a slowmode in a channel',
     permission: ['MANAGE_CHANNELS'],
+    botPermission: ["MANAGE_CHANNELS", "VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

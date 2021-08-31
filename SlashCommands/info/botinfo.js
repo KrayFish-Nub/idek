@@ -8,6 +8,7 @@ module.exports = {
     name: 'botinfo',
     description: 'Get information about the bot!',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTCH_FILES'],
     ownerOnly: false,
     /** 
      * @param {Client} client 

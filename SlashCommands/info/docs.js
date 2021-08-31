@@ -4,6 +4,7 @@ module.exports = {
     name: 'docs',
     description: 'Docs of discordjs',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES'],
     ownerOnly: false,
     options: [
         {

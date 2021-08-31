@@ -5,6 +5,7 @@ module.exports = {
     name: 'itunes',
     description: 'Get information about a song in the iTunes store!',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

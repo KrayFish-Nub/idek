@@ -5,6 +5,7 @@ module.exports = {
     name: 'iplookup',
     description: 'Get information abouut an ip',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: true,
     options: [
         {

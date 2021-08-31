@@ -4,6 +4,7 @@ module.exports = {
     name: 'lockdown',
     description: 'Lock a channel',
     permission: ['MANAGE_CHANNELS'],
+    botPermission: ['MANAGE_CHANNELS'],
     ownerOnly: false,
     options: [
         {

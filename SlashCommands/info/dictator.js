@@ -4,6 +4,7 @@ module.exports = {
     name: 'dictator',
     description: 'make someone a dictator',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTACH_FILES'],
     ownerOnly: false,
     options: [
         {

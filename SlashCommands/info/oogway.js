@@ -5,6 +5,7 @@ module.exports = {
     name: 'oogway',
     description: 'Turtule never lies',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["SEND_MESSAGES", "VIEW_CHANNEL", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

@@ -4,6 +4,8 @@ module.exports = {
     name: 'clear',
     description: 'delete x amount of messages',
     permission: ['MANAGE_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'VIEW_CHANNEL', 'MANAGE_MESSAGES'],
+
     ownerOnly: false,
     options: [
         {

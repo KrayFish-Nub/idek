@@ -4,13 +4,14 @@ module.exports = {
     name: 'ban',
     description: 'Ban a member duh',
     permission: ['BAN_MEMBERS'],
+    botPermission: ['BAN_MEMBERS'],
     ownerOnly: false,
     options: [
         {
             name: 'user',
             type: 'USER',
             description: 'who we banning?',
-            required: true          
+            required: true
         },
         {
             name: 'reason',

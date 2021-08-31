@@ -4,6 +4,7 @@ module.exports = {
     name: "suggestrd",
     description: "Send a radio station to add to the bot!",
     permission: ['SEND_MESSAGES'],
+    botPermission: ["CONNECT", "VIEW_CHANNEL", "SPEAK", "SEND_MESSAGES","USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

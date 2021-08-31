@@ -4,6 +4,7 @@ module.exports = {
     name: "roleinfo",
     description: "See information about a role",
     permission: ['SEND_MESSAGES'],
+    botPermission: ["MANAGE_ROLES", "VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

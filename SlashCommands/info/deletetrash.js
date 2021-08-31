@@ -5,6 +5,7 @@ module.exports = {
     name: 'delete',
     description: 'Are you sure u want to delete this trash',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTACH_FILES'],
     ownerOnly: false,
     options: [
         {

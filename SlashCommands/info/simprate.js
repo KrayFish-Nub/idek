@@ -4,6 +4,7 @@ module.exports = {
     name: "simprate",
     description: "Simp rate of a user",
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {

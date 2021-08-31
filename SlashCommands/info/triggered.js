@@ -4,6 +4,7 @@ module.exports = {
     name: 'triggered',
     description: 'he is triggered',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["ATTACH_FILES", "SEND_MESSAGES", "VIEW_CHANNEL"],
     ownerOnly: false,
     options: [
         {

@@ -4,6 +4,7 @@ module.exports = {
     name: "country",
     description: "Get info on a country!",
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'VIEW_CHANNEL'],
     ownerOnly: false,
     options: [
         {

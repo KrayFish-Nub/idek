@@ -4,6 +4,7 @@ module.exports = {
     name: 'lockdownoff',
     description: 'Unlock a channel',
     permission: ['MANAGE_CHANNELS'],
+    botPermission: ['MANAGE_CHANNELS'],
     ownerOnly: false,
     /** 
      * @param {Client} client 

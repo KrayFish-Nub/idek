@@ -4,6 +4,7 @@ module.exports = {
     name: 'rolelist',
     description: 'Check the roles for this guild ',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "MANAGE_ROLES", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
 
     /** 

@@ -4,6 +4,7 @@ module.exports = {
     name: 'beautiful',
     description: 'that person is beautiful',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'ATTCH_FILES'],
     ownerOnly: false,
     options: [
         {

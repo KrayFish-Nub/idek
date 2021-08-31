@@ -1,6 +1,6 @@
 const { Client, Collection, Interaction, MessageEmbed, MessageButton, MessageActionRow, ClientVoiceManager } = require("discord.js");
-const { Player } = require('discord-player');
-const { registerPlayerEvents } = require('./events/music_events');
+
+
 const { mongoUrl } = require("./security.json");
 const mongoose = require("mongoose");
 const chalk = require("chalk")
@@ -13,20 +13,20 @@ const client = new Client({
 });
 
 mongoose.connect(mongoUrl, {
-    useFindAndModify: true,
+    useFindAndModify: false,
     useUnifiedTopology: true,
     useNewUrlParser: true
 }).then(console.log(chalk.greenBright('Connected to MongoDB')))
+
 
 module.exports = client;
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./config.json");
 client.security = require("./security.json");
-client.player = new Player(client);
-registerPlayerEvents(client.player);
 require("./handler")(client);
 
+//-------------Ticket event
 client.on('interactionCreate', async (interaction, args) => {
     const userClick = interaction.member
     const user = interaction.user.username;
@@ -230,24 +230,125 @@ client.on('interactionCreate', async (interaction, args) => {
     // BUTTON ROLES \\
 
 });
+//-------------Antilink event
+client.on("messageCreate", async message => {
+    if (!message.guild) return;
+
+    if (message.member.permissions.has("MANAGE_CHANNELS")) return;
+
+    const msg = `<@${message.author.id}> ${client.config.rightarrow} Only high staff members can send links here!`
+
+    function deletedMessage() {
+        message.delete();
+        message.channel.send({ content: `${msg}` })
+    }
+
+    const forbiddenLinks = ["discord.io", "dsc.gg", "discord.gg", "discord.gg/invite", "discord.me"]
+
+    forbiddenLinks.forEach((link) => {
+        if (message.content.includes(link)) return deletedMessage()
+    })
+})
+//-------------Suggestion command
 client.on("messageCreate", async message => {
     if (message.author.bot) return;
     const sugSchema = require('./models/suggestions')
+
     sugSchema.findOne({ Guild: message.guild.id }, async (err, data) => {
         if (!data) return;
         if (message.channel.id === data.Channel) {
 
             const channel = message.guild.channels.cache.get(data.Channel);
             message.delete()
-            const embed = new MessageEmbed()
+            const suggestionEmbed = new MessageEmbed()
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                .setDescription(message.content)
+                .setDescription(`aaa ${message.content}`)
                 .setTimestamp()
                 .setColor("RANDOM")
-            channel.send({ embeds: [embed] })
+            channel.send({ embeds: [suggestionEmbed] });
         }
     })
 });
+//-------------Help events
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isSelectMenu()) return;
+
+    if (interaction.values[0] === 'mod') {
+        const modCommands = new MessageEmbed()
+            .setTitle('List of Moderation commands').setURL(client.config.botinvurl).setFooter(client.config.cpblack)
+            .setColor(client.config.color).setThumbnail(client.config.shieldmod)
+            .setDescription(client.config.slash + ' All commands are in **_Slash_**\n\n`ban`, `idban`, `unban`, `kick`, `mute`, `unmute`, `nuke`, \n`clear`, `lockdown`, `lockdownoff`, \n`addrole`, `removerole`, `set-tickets`')
+        await interaction.reply({ embeds: [modCommands], ephemeral: true });
+    }
+    if (interaction.values[0] === 'utils') {
+        const utilsCommands = new MessageEmbed()
+            .setTitle('List of Moderation commands').setURL(client.config.botinvurl).setFooter(client.config.cpblack)
+            .setColor(client.config.color).setThumbnail(client.config.utilsicon)
+            .setDescription(client.config.slash + ' All commands are in **_Slash_**\n\n`roleinfo`, `iplookup`, `whois`, `country`, `banner`, \n`sourcebin`, `avatar`, `rolelist`, `botinfo`, `docs`, \n`servericon`, `serverinfo`, `invitetracker`, \n`commands`, `suggestrd`, `systeminfo`')
+        await interaction.reply({ embeds: [utilsCommands], ephemeral: true });
+    }
+    if (interaction.values[0] === 'music') {
+        const musicCommands = new MessageEmbed()
+            .setTitle('List of Music commands').setURL(client.config.botinvurl).setFooter(client.config.cpblack)
+            .setColor(client.config.color).setThumbnail(client.config.musicicon)
+            .setDescription(client.config.slash + ' All commands are in **_Slash_**\n\n**_RadioStations :_** `radiostations` \n\n**_Music Commands :_**')
+        await interaction.reply({ embeds: [musicCommands], ephemeral: true });
+    }
+    if (interaction.values[0] === 'info') {
+        const infoCommands = new MessageEmbed()
+            .setTitle('Information about Black Phone').setURL(client.config.botinvurl).setFooter(client.config.cpblack)
+            .setColor(client.config.color).setThumbnail(client.config.blackphoneicon)
+            .setDescription(`Hey <@${interaction.user.id}> \n\nI'm <@${client.user.id}> a bot that can help you spend time in discord, moderate and all in all to have fun! \n\nI currently have **2** main developers \n**1.** <@${client.config.owner}>\n**2.** <@${client.config.owner2}>`)
+        await interaction.reply({ embeds: [infoCommands], ephemeral: true });
+    }
+    if (interaction.values[0] === 'fun') {
+        const funCommands = new MessageEmbed()
+            .setTitle('List of Fun commands').setURL(client.config.botinvurl).setFooter(client.config.cpblack)
+            .setColor(client.config.color).setThumbnail(client.config.roboticon)
+            .setDescription(client.config.slash + ' All commands are in **_Slash_**\n\n`8ball`, `gayrate`, `simprate`, `beautiful`, `colorify`, `cycle`, \n`delete`, `dictator`, `dislike`, `drake`, `getmeme`, `gunpoint`, \n`iosalert`, `kannagen`, `magik`, `oogway`, `say`, `thisguy`, \n`triggered`, `trinity`, `trumptweet`, `wanted`, `whowouldwin`\n')
+        await interaction.reply({ embeds: [funCommands], ephemeral: true });
+    }
+    if (interaction.values[0] === 'configs') {
+        const configCommands = new MessageEmbed()
+            .setTitle('List of Configuration commands').setURL(client.config.botinvurl).setFooter(client.config.cpblack)
+            .setColor(client.config.color).setThumbnail(client.config.blackphoneicon)
+            .setDescription(client.config.slash + ' All commands are in **_Slash_**\n\n`set-suggestions`, `set-tickets`')
+        await interaction.reply({ embeds: [configCommands], ephemeral: true });
+    }
+})
+//-------------Autorole event
+client.on('guildMemberAdd', async member => {
+    const roleSchema = require('./models/autorole')
+
+    roleSchema.findOne({ Guild: member.guild.id }, async (err, data) => {
+        if (!data) return;
+        if (data) {
+            const role = member.guild.roles.cache.find(role => role.id == data.Role);
+            if (!role) {
+                return data.delete()
+            }
+            member.roles.add(role.id);
+        }
+    });
+})
+//-------------Verify event
+client.on('interactionCreate', async interaction => {
+    const verifySchema = require('./models/verifyRoles')
+    verifySchema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
+        if (!data) return;
+        if (data) {
+            const roleCheck = interaction.guild.roles.cache.find(role => role.id == data.Role);
+            if (!roleCheck) {
+                return data.delete()
+            }
+            if (interaction.customId === "btnRole") {
+                interaction.member.roles.add(roleCheck)
+                interaction.reply({ content: `Verified`, ephemeral: true })
+            }
+        }
+    });
+})
+
 
 
 client.login(client.security.token);

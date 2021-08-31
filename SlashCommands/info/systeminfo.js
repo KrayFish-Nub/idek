@@ -6,6 +6,7 @@ module.exports = {
     name: 'systeminfo',
     description: 'Information about the VPS im on',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["ATTACH_FILES", "SEND_MESSAGES", "VIEW_CHANNEL"],
     ownerOnly: false,
     /** 
      * @param {Client} client 

@@ -4,6 +4,7 @@ module.exports = {
     name: 'colorify',
     description: 'colorify some guy',
     permission: ['SEND_MESSGAES'],
+    botPermission: ['SEND_MESSAGES', 'ATTCH_FILES'],
     ownerOnly: false,
     options: [
         {

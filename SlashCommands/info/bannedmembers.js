@@ -4,6 +4,7 @@ module.exports = {
     name: 'allbans',
     description: 'Displays all banned members',
     permission: ['SEND_MESSAGES'],
+    botPermission: ['SEND_MESSAGES', 'VIEW_AUDIT_LOG'],
     ownerOnly: false,
     /** 
      * @param {Client} client 

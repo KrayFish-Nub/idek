@@ -3,7 +3,8 @@ const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, Messa
 module.exports = {
     name: 'kick',
     description: 'Kick a member duh',
-    permission: ['BAN_MEMBERS'],
+    permission: ['KICK_MEMBERS'],
+    botPermission: ["KICK_MEMBERS"],
     ownerOnly: false,
     options: [
         {

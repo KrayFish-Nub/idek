@@ -1,10 +1,11 @@
 const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, MessageAttachment } = require('discord.js');
 const fetch = require('node-fetch');
-// https://api.popcatdev.repl.co/mnm?image=
+
 module.exports = {
     name: 'iosalert',
     description: 'Get iOS Alert',
     permission: ['SEND_MESSAGES'],
+    botPermission: ["VIEW_CHANNEL", "SEND_MESSAGES", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES"],
     ownerOnly: false,
     options: [
         {
