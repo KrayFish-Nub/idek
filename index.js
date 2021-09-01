@@ -234,7 +234,7 @@ client.on('interactionCreate', async (interaction, args) => {
 client.on("messageCreate", async message => {
     if (!message.guild) return;
 
-    if (message.member.permissions.has("MANAGE_CHANNELS")) return;
+    if (message.member.permissions.has("KICK_MEMBERS")) return;
 
     const msg = `<@${message.author.id}> ${client.config.rightarrow} Only high staff members can send links here!`
 
@@ -348,6 +348,8 @@ client.on('interactionCreate', async interaction => {
         }
     });
 })
+
+
 
 
 
