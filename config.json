@@ -1,6 +1,6 @@
 {
     "botpfp": "https://media.discordapp.net/attachments/872924441275953162/880960998981386261/standard_3.gif",
-    "color": "#5539cc",
+    "color": "#5865F2",
     "owner": "749290595645653114",
     "owner2": "873881757064261672",
     "lock": "<:blurplelock:868554303848210512>",
@@ -20,6 +20,7 @@
     "offline": "<:ooffline:869190610710581289>",
     "heart": "<:blurpleheart:880142674601066677>",
     "slash": "<:slash:881341580370382909>",
+    "check": "<:check:883077726343401512> ",
     "uparrow": "<:blurpleup:880144916980850748>",
     "botinvurl": "https://dsc.gg/blackphonebot",
     "cpblack": "© Black Phone",

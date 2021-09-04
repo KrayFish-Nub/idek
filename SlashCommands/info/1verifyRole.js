@@ -2,7 +2,7 @@ const { Client, Util, MessageEmbed, MessageActionRow, MessageButton, MessageAtta
 const Schema = require('../../models/verifyRoles')
 module.exports = {
     name: 'verifyrole',
-    description: 'Create a verification role',
+    description: 'Create a verification system',
     permission: ['ADMINITRATOR'],
     BotPermission: ['ADMINITRATOR'],
     ownerOnly: false,
@@ -10,7 +10,7 @@ module.exports = {
         {
             name: 'message',
             type: 'STRING',
-            description: 'Set the message for the reaction roles',
+            description: 'Set the message for the verification system',
             required: true
         },
         {
@@ -31,7 +31,7 @@ module.exports = {
         const roleCheck = interaction.guild.roles.cache.get(reactionRole)
         const verifyEmbed = new MessageEmbed()
             .setColor(client.config.color).setTitle(interaction.guild.name)
-            .setDescription(`${messageLine}\n${roleCheck}`)
+            .setDescription(`${messageLine}`)
         Schema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
             await new Schema({
                 Guild: interaction.guild.id,
