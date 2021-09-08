@@ -32,12 +32,12 @@ module.exports = async (client) => {
         arrayOfSlashCommands.push(file);
     });
     client.on("ready", async () => {
-        //1 server
+        // //1 server
         await client.guilds.cache
             .get("875640933310414868")
             .commands.set(arrayOfSlashCommands);
         //reset 1 server
-        // client.guilds.cache.get('875640933310414868').commands.set([]);
+        // await client.guilds.cache.get('875640933310414868').commands.set([]);
         //reset slash commands all servers takes 1hour
         // await client.application.commands.set([]);
         //all servers takes 1hour

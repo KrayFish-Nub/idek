@@ -1,16 +1,16 @@
 const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, MessageAttachment } = require('discord.js');
-const sugSchema = require('../../models/suggestions')
+const Schema = require('../../models/logsCh')
 module.exports = {
-    name: 'set-suggestions',
-    description: 'Set the suggestion channel',
+    name: 'set-logs',
+    description: 'Full discord logger',
     permission: ['ADMINISTRATOR'],
-    botPermission: ['ADMINISTRATOR'],
+    BotPermission: ['ADMINISTRATOR'],
     ownerOnly: false,
     options: [
         {
             name: 'channel',
             type: 'CHANNEL',
-            description: 'set the channel dummy',
+            description: 'Channel for logs',
             required: true
         }
     ],
@@ -20,19 +20,19 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async (client, interaction, args, message) => {
-        const channel = args[0];
-        const channelToFind = await interaction.guild.channels.cache.get(channel)
-        sugSchema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
+        const chName = args[0]
+        Schema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
             if (data) {
-                data.Channel = channelToFind.id;
+                data.Channel = chName;
                 data.save();
             } else {
-                new sugSchema({
+                new Schema({
                     Guild: interaction.guild.id,
-                    Channel: channelToFind.id,
+                    Channel: chName,
                 }).save();
             }
-            interaction.followUp(`<#${channel}> has been set as the suggestion channel!`)
+            interaction.followUp(`〢Logs Channel ➜ <#${chName}>`)
         })
+        console.log(chName)
     }
 }

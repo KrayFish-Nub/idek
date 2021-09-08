@@ -20,19 +20,10 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async (client, interaction, args, message) => {
-        const UnbanGif = "https://cdn.discordapp.com/attachments/872924441275953162/880529592119611413/yay-minions.gif"
         let userId = args[0]
 
         client.users.fetch(userId).then(async (user) => {
             await interaction.guild.members.unban(user.id)
-            const userMessage = client.users.cache.get(userId)
-            const userMessage2 = client.users.cache.get(userId)
-            userMessage.send({
-                content: `<@${interaction.user.id}> unbanned your ass from **${interaction.guild.name}** `
-            })
-            userMessage2.send({
-                content: `${UnbanGif}`
-            })
             const banEmbed = new MessageEmbed()
                 .setColor(client.config.color).setTimestamp()
                 .addFields(

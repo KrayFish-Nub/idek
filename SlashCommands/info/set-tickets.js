@@ -1,5 +1,5 @@
-const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, MessageAttachment } = require("discord.js");
-
+const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, MessageAttachment, CommandInteraction } = require("discord.js");
+const Schema = require('../../models/supportRole')
 module.exports = {
     name: 'set-tickets',
     description: 'Send ticket command',
@@ -8,48 +8,45 @@ module.exports = {
     ownerOnly: false,
     options: [
         {
+            type: 'ROLE',
+            description: 'Select your ticket support',
+            name: 'support',
+            required: true,
+        },
+        {
             type: 'STRING',
             description: 'Paste the link for your server banner',
-            name: 'custom_image',
+            name: 'image',
             required: false,
         },
     ],
     /** 
      * @param {Client} client 
-     * @param {Message} message 
+     * @param {CommandInteraction} interaction 
      * @param {String[]} args 
      */
     run: async (client, interaction, args, message) => {
-
-        const ticketstart = new MessageEmbed()
+        const role = interaction.guild.roles.cache.get(args[0])
+        Schema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
+            if (data) data.delete();
+            new Schema({
+                Guild: interaction.guild.id,
+                Role: role.id,
+            }).save();
+        })
+        const ticketStart = new MessageEmbed()
             .setTitle("`Create a ticket`").setThumbnail(interaction.guild.iconURL({ dynamic: true }))
-            .setDescription("```Select the category you need help with\n```")
+            .setDescription("> Press the button bellow to create a ticket")
             .setFooter(interaction.guild.name, interaction.guild.iconURL()).setColor(client.config.color)
-            .setImage(args.join(' '))
-
-        const support = new MessageButton()
-            .setCustomId("support")
-            .setEmoji("877235024263524382")
-            .setLabel("〢Support Ticket")
-            .setStyle('PRIMARY')
-
-        const contact = new MessageButton()
-            .setCustomId("contact")
-            .setEmoji("877913018430783619")
-            .setLabel("〢Contact Staff")
-            .setStyle('PRIMARY')
-
-        const partners = new MessageButton()
-            .setCustomId("partner")
-            .setEmoji("879111663176020008")
-            .setLabel("〢Partnership")
-            .setStyle('PRIMARY')
-
+            .setImage(args[1])
+        const ticketBtn = new MessageButton()
+            .setCustomId("ticket")
+            .setEmoji("863637932689457153")
+            .setLabel("Ticket")
+            .setStyle('SECONDARY')
         const row = new MessageActionRow()
-            .addComponents(support, contact, partners)
-
+            .addComponents(ticketBtn)
         interaction.channel.bulkDelete(1, true)
-
-        interaction.channel.send({ embeds: [ticketstart], components: [row] });
+        interaction.channel.send({ embeds: [ticketStart], components: [row] });
     }
 }

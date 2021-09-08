@@ -5,4 +5,4 @@ const Schema = new mongoose.Schema({
     Channel: String
 })
 
-module.exports = mongoose.model('suggestions-channels', Schema);
+module.exports = mongoose.model('logs-channels', Schema);

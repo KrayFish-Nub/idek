@@ -36,6 +36,7 @@
         "os": "^0.1.2",
         "popcat-wrapper": "^1.3.18",
         "pretty-ms": "^7.0.1",
+        "reconlx": "^2.4.3",
         "sourcebin": "^4.2.5",
         "weather-js": "^2.0.0",
         "youtube-sr": "^4.1.7",

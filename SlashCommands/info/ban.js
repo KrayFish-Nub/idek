@@ -26,18 +26,11 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async (client, interaction, args, message) => {
-        const banGif = "https://cdn.discordapp.com/attachments/872924441275953162/880514868778770524/bongocat-banhammer.gif"
         const reason = args[1] || `<@${interaction.user.id}> was too lazy to provide a reason smh`
         const user = interaction.guild.members.cache.get(args[0])
+        if(!user) return;
         interaction.guild.members.ban(user);
-        const userMessage = client.users.cache.get(args[0])
-        const userMessage2 = client.users.cache.get(args[0])
-        userMessage.send({
-            content: `<@${interaction.user.id}> banned your ass from **${interaction.guild.name}** \nReason ${reason} `
-        })
-        userMessage2.send({
-            content: `${banGif}`
-        })
+
         const banEmbed = new MessageEmbed()
             .setColor(client.config.color).setDescription(`**_Reason :_**\n${reason}`)
             .addFields(
