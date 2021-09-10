@@ -130,25 +130,25 @@ client.on('interactionCreate', async interaction => {
     }
 })
 //-------------AntLink event
-client.on("messageCreate", async message => {
-    if (!message.guild) return;
+// client.on("messageCreate", async message => {
+//     if (!message.guild) return;
 
-    if (message.member.permissions.has("KICK_MEMBERS")) return;
+//     if (message.member.permissions.has("KICK_MEMBERS")) return;
 
-    const msg = `<@${message.author.id}> ${client.config.rightarrow} Only high staff members can send links here!`
+//     const msg = `<@${message.author.id}> ${client.config.rightarrow} Only high staff members can send links here!`
 
-    function deletedMessage() {
-        message.delete();
-        message.channel.send({ content: `${msg}` })
-    }
+//     function deletedMessage() {
+//         message.delete();
+//         message.channel.send({ content: `${msg}` })
+//     }
 
-    const forbiddenLinks = ["discord.io", "dsc.gg", "discord.gg", "discord.gg/invite", "discord.me"]
+//     const forbiddenLinks = ["discord.io", "dsc.gg", "discord.gg", "discord.gg/invite", "discord.me"]
 
-    forbiddenLinks.forEach((link) => {
-        if (message.content.includes(link)) return deletedMessage()
-    })
+//     forbiddenLinks.forEach((link) => {
+//         if (message.content.includes(link)) return deletedMessage()
+//     })
 
-})
+// })
 //-------------Update message
 // client.on('messageCreate', async message => {
 //     if (message.author.bot) return;
