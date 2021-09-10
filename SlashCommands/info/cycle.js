@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'cycle',
-    description: 'Type a message and cylce will say it! ',
+    description: 'Type a message and clyde will say it! ',
     permission: ['SEND_MESSAGES'],
     botPermission: ['SEND_MESSAGES', 'ATTACH_FILES'],
     ownerOnly: false,

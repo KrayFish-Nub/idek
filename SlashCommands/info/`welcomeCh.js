@@ -1,8 +1,8 @@
 const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, MessageAttachment } = require('discord.js');
-const Schema = require('../../models/logsCh')
+const Schema = require('../../models/welcomeCh')
 module.exports = {
-    name: 'set-logs',
-    description: 'Full discord logger',
+    name: 'set-welcome',
+    description: 'Welcome Channel',
     permission: ['ADMINISTRATOR'],
     BotPermission: ['ADMINISTRATOR'],
     ownerOnly: false,
@@ -10,7 +10,7 @@ module.exports = {
         {
             name: 'channel',
             type: 'CHANNEL',
-            description: 'Channel for logs',
+            description: 'Channel for welcoming',
             required: true
         }
     ],
@@ -31,7 +31,7 @@ module.exports = {
                     Channel: chName,
                 }).save();
             }
-            interaction.followUp(`〢Logs Channel ➜ <#${chName}>`)
+            interaction.followUp(`〢Welcome Channel ➜ <#${chName}>`)
         })
     }
 }

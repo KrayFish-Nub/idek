@@ -1,5 +1,5 @@
 const { Client, Collection, MessageEmbed, MessageActionRow, MessageButton, MessageAttachment } = require('discord.js');
-
+const distube = require('distube') 
 module.exports = {
     name: 'test',
     description: 'hmmmmmm',
@@ -12,11 +12,8 @@ module.exports = {
      * @param {CommandInteraction} interaction 
      * @param {String[]} args 
      */
-    run: async (client, interaction, args) => {
-        interaction.guild.channels.create('Statistics', {
-            type: 'GUILD_CATEGORY'
-        }).then(channel =>
-            channel.setPosition(0)
-        )
+    run: async (client, interaction, args, message) => {
+        distube.play(message, args.join(" "));
+
     }
 }

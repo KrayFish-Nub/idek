@@ -33,7 +33,7 @@ module.exports = {
         ],
             {
                 title: "Code",
-                description: "Hmm, it apears this code has no description. Wait, is this the description?"
+                description: "Hmm, it appears this code has no description. Wait, is this the description?"
             }
         ).then((value) => {
             interaction.followUp({ content: `Your code has been posted: ${value.url}` });
