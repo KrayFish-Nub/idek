@@ -44,5 +44,8 @@
         "weather-js": "^2.0.0",
         "youtube-sr": "^4.1.7",
         "ytdl-core": "^4.9.1"
+    },
+    "engines": {
+        "node": "16.x"
     }
 }
