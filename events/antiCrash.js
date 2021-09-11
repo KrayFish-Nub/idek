@@ -3,7 +3,7 @@ module.exports = (client, message, arguments) => {
     process.on('unhandledRejection', (reason, p) => {
         console.log(' [antiCrash] :: Unhandled Rejection/Catch'.bgRed);
         const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js')
-        const crashLogCh = client.channels.cache.get('885588356900204584');
+        const crashLogCh = client.channels.cache.get('886389861974691951');
         const crashEmbed = new MessageEmbed()
             .setTitle('Anti Crash : Rejection - Catch')
             .setColor(client.config.color)
