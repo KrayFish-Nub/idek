@@ -4,18 +4,20 @@ const { Client, Collection, MessageEmbed, MessageButton, MessageActionRow, Messa
 const { mongoUrl } = require("./security.json");
 const mongoose = require("mongoose");
 const chalk = require("chalk")
+let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a, b) => a + b, 0)
+
 const client = new Client({
     intents: 32767,
     allowedMentions: {
         parse: ["roles", "users"],
         repliedUser: false,
     },
-    // presence: {
-    //     activities: [
-    //         { name: "your mom", type: "LISTENING" }
-    //     ],
-    //     status: "dnd",
-    // }
+    presence: {
+        activities: [
+            { name: `21-9-2021`, type: "COMPETING" }
+        ],
+        status: "dnd",
+    }
 });
 
 mongoose.connect(mongoUrl, {
