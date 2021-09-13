@@ -3,8 +3,8 @@ const Schema = require('../../models/verifyRoles')
 module.exports = {
     name: 'verifyrole',
     description: 'Create a verification system',
-    permission: ['ADMINITRATOR'],
-    BotPermission: ['ADMINITRATOR'],
+    permission: ['ADMINISTRATOR'],
+    BotPermission: ['ADMINISTRATOR'],
     ownerOnly: false,
     options: [
         {

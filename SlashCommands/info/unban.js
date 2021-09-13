@@ -10,7 +10,7 @@ module.exports = {
         {
             name: 'user_id',
             type: 'STRING',
-            description: 'give users id dumbass',
+            description: 'give users id dumb ass',
             required: true
         }
     ],
@@ -36,6 +36,8 @@ module.exports = {
                 ).setAuthor(interaction.user.username, interaction.user.avatarURL({ dynamic: true }))
 
             interaction.followUp({ embeds: [banEmbed] });
+        }).catch(() =>{
+            interaction.followUp({content: 'Provide a banned member\'s ID.'})
         })
     }
 }

@@ -20,7 +20,7 @@ module.exports = {
                     label: 'Configuration',
                     description: 'Set up settings for bot',
                     value: 'configs',
-                    emoji: '870472887201591346'
+                    emoji: '872901821537062913'
                 },
                 {
                     label: 'Moderation',
@@ -55,7 +55,7 @@ module.exports = {
             ])
         const menuRow = new MessageActionRow()
             .addComponents(menu)
-        const img = client.config.techsupport
+        const img = client.config.astronaut
 
         interaction.channel.bulkDelete(1, true)
 

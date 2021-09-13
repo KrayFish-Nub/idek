@@ -21,12 +21,9 @@ module.exports = {
      */
     run: async (client, interaction, args, message) => {
         const user = interaction.guild.members.cache.get(args[0])
+        if(user.roles.highest. position >= interaction.member.roles.highest.position) return interaction.followUp({ content: 'He has a higher role than you'})
         interaction.guild.members.kick(user);
-        
-        const userMessage = client.users.cache.get(args[0])
-        userMessage.send({
-            content: `<@${interaction.user.id}> kicked you from **${interaction.guild.name}** `
-        })
+ 
 
         const kickEmbed = new MessageEmbed()
             .setColor(client.config.color)

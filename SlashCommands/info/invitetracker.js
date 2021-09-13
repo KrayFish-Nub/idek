@@ -26,7 +26,8 @@ module.exports = {
         let userInv = invites.filter(u => u.inviter && u.inviter.id === user.id)
 
         if (userInv.size <= 0) {
-            return interaction.channel.send({ content: `${user} has \`0\` invites ` })
+            interaction.channel.bulkDelete(1, true)
+            interaction.channel.send({ content: `${user} has \`0\` invites ` })
         }
 
         let invCodes = userInv.map(x => x.code).join('\n')
@@ -36,7 +37,7 @@ module.exports = {
         const tackerEmbed = new MessageEmbed()
             .setDescription(`**_Invites  of :_** ${user} `)
             .addField(`User Invites`, `${i}`)
-            .addField('Invite Codes:', `${invCodes}`)
+            .addField('Invite Codes:', `\`\`\`${invCodes}\`\`\``)
             .setColor(client.config.color)
 
         interaction.followUp({ embeds: [tackerEmbed] });

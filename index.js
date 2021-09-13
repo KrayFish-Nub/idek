@@ -6,12 +6,16 @@ const mongoose = require("mongoose");
 const chalk = require("chalk")
 const client = new Client({
     intents: 32767,
-    shards: "auto",
     allowedMentions: {
         parse: ["roles", "users"],
         repliedUser: false,
-    }
-
+    },
+    // presence: {
+    //     activities: [
+    //         { name: "your mom", type: "LISTENING" }
+    //     ],
+    //     status: "dnd",
+    // }
 });
 
 mongoose.connect(mongoUrl, {
@@ -259,8 +263,14 @@ client.on('interactionCreate', async interaction => {
                 return data.delete()
             }
             if (interaction.customId === "btnRole") {
-                interaction.member.roles.add(roleCheck)
-                interaction.reply({ content: `Verified`, ephemeral: true })
+                if (interaction.member.roles.cache.has(roleCheck.id)) {
+                    return interaction.member.roles.remove(roleCheck).then(() => {
+                        interaction.reply({ content: `Removed ${roleCheck}`, ephemeral: true })
+                    })
+                } else {
+                    interaction.member.roles.add(roleCheck)
+                    interaction.reply({ content: `Added ${roleCheck}`, ephemeral: true })
+                }
             }
         }
     });
@@ -998,6 +1008,12 @@ client.on('guildMemberAdd', async (member) => {
 
         welCh.send({ embeds: [] });
     })
+})
+client.on('messageReactionAdd', async (reaction, user) => {
+
+})
+client.on('messageReactionRemove', async (reaction, user) => {
+
 })
 
 client.login(client.security.token);

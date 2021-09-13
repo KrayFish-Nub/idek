@@ -28,6 +28,8 @@ module.exports = {
     run: async (client, interaction, args, message) => {
         const reason = args[1] || `<@${interaction.user.id}> was too lazy to provide a reason smh`
         const user = interaction.guild.members.cache.get(args[0])
+        if(user.roles.highest. position >= interaction.member.roles.highest.position) return interaction.followUp({ content: 'He has a higher role than you'})
+
         if(!user) return;
         interaction.guild.members.ban(user);
 
