@@ -4,7 +4,6 @@ const { Client, Collection, MessageEmbed, MessageButton, MessageActionRow, Messa
 const { mongoUrl } = require("./security.json");
 const mongoose = require("mongoose");
 const chalk = require("chalk")
-let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a, b) => a + b, 0)
 
 const client = new Client({
     intents: 32767,
