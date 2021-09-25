@@ -1,6 +1,6 @@
 {
     "token": "ODczNzk5OTk5NzY5NjgxOTcx.YQ9rqg.6SQnnS3sS_6kXJZBoqDp8vFKAfw",
-    "mongoUrl": "mongodb+srv://blackphone:w5ZBNcfBxWyVf2rC@cluster0.slqtw.mongodb.net/Data",
+    "mongoUrl": "mongodb+srv://blackphone:admin@cluster0.slqtw.mongodb.net/Data",
     "prefix": "!",
     "apikey": "8e37b9fbd43a5c9c649db70b8a199a0d5ba294709508c51c85475449c173e9942a8e5bd33016fda7324ed28b7ddef2df6bbe2b7ba06dc676b9b6c707ab6e980e"
 }
