@@ -3,7 +3,7 @@ module.exports = (client, message, arguments) => {
     process.on('unhandledRejection', (reason, p) => {
         console.log(' [antiCrash] :: Unhandled Rejection/Catch'.bgRed);
         const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js')
-        const crashLogCh = client.channels.cache.get('885588356900204584');
+        const crashLogCh = client.channels.cache.get('');
         const crashEmbed = new MessageEmbed()
             .setTitle('Anti Crash : Rejection - Catch')
             .setColor(client.config.color)
@@ -31,7 +31,7 @@ module.exports = (client, message, arguments) => {
         console.log(' [antiCrash] :: Uncaught Exception/Catch'.bgRed);
         console.log(err, origin);
         const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js')
-        const crashLogCh = client.channels.cache.get('885588356900204584');
+        const crashLogCh = client.channels.cache.get('');
         const crashEmbed = new MessageEmbed()
             .setTitle('Anti Crash : Uncaught Exception - Catch')
             .setColor(client.config.color)
@@ -58,7 +58,7 @@ module.exports = (client, message, arguments) => {
         console.log(' [antiCrash] :: Uncaught Exception/Catch (MONITOR)'.bgRed);
         console.log(origin);
         const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js')
-        const crashLogCh = client.channels.cache.get('886389861974691951');
+        const crashLogCh = client.channels.cache.get('');
         const crashEmbed = new MessageEmbed()
             .setTitle('Anti Crash : Uncaught Exception - Catch **__(MONITOR)__**')
             .setColor(client.config.color)
@@ -84,7 +84,7 @@ module.exports = (client, message, arguments) => {
     process.on('multipleResolves', (type, promise, reason) => {
         console.log(' [antiCrash] :: Multiple Resolves'.bgRed);
         const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js')
-        const crashLogCh = client.channels.cache.get('885588356900204584');
+        const crashLogCh = client.channels.cache.get('');
         const crashEmbed = new MessageEmbed()
             .setTitle('Anti Crash - Multiple Resolves')
             .setColor(client.config.color)
